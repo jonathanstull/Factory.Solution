@@ -19,6 +19,16 @@
   }
 </ol>
 
+@using (Html.BeginForm("AddEngineer", "Machines"))
+{
+  @Html.HiddenFor(model => model.MachineId)
+
+  @Html.Label("Assign an engineer")
+  @Html.DropDownList("EngineerId")
+
+  <input type="submit" value="Assign an engineer" />
+}
+
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.MachineId)

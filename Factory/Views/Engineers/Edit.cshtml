@@ -4,12 +4,6 @@
 
 <h2>Update engineer @Html.DisplayFor(model => model.Name)</h2>
 
-<h3>Current details</h3>
-<p>@Html.DisplayNameFor(model => model.HireDate): @Html.DisplayFor(model => model.HireDate)</p>
-<p>@Html.DisplayNameFor(model => model.CertDate): @Html.DisplayFor(model => model.CertDate)</p>
-<p>@Html.DisplayNameFor(model => model.CertNum): @Html.DisplayFor(model => model.CertNum)</p>
-<p>@Html.DisplayNameFor(model => model.CertExp): @Html.DisplayFor(model => model.CertExp)</p>
-
 <h3>Machines assigned to this engineer:</h3>
 <ol>
   @foreach(var join in Model.EMJoinEntities)

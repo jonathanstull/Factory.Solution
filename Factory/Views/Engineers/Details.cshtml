@@ -4,17 +4,28 @@
 
 <h2>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h2>
 
+<h3>Current details</h3>
+<p>@Html.DisplayNameFor(model => model.HireDate): @Html.DisplayFor(model => model.HireDate)</p>
+<p>@Html.DisplayNameFor(model => model.CertDate): @Html.DisplayFor(model => model.CertDate)</p>
+<p>@Html.DisplayNameFor(model => model.CertNum): @Html.DisplayFor(model => model.CertNum)</p>
+<p>@Html.DisplayNameFor(model => model.CertExp): @Html.DisplayFor(model => model.CertExp)</p>
+
 @if(@Model.EMJoinEntities.Count == 0)
 {
-  <p>This engineer is not assigned to a machine.</p>
+  <h3>This engineer is not assigned to a machine.</h3>
 }
 else
 {
-  <h4>Machines assigned to @Html.DisplayFor(model => model.Name):</h4>
+  <h3>Machines assigned to @Html.DisplayFor(model => model.Name):</h3>
   <ul>
   @foreach(var join in Model.EMJoinEntities)
   {
     <li>@join.Machine.Model (#@join.Machine.Serial)</li>
+    @using (Html.BeginForm("DeleteMachines", "Engineers"))
+      {
+        @Html.Hidden("joinId", @join.Id)
+        <input type="submit" value="Delete"/>
+      }
   }
   </ul>
 }

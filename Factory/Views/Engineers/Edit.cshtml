@@ -10,7 +10,25 @@
 <p>@Html.DisplayNameFor(model => model.CertNum): @Html.DisplayFor(model => model.CertNum)</p>
 <p>@Html.DisplayNameFor(model => model.CertExp): @Html.DisplayFor(model => model.CertExp)</p>
 
-@using (Html.BeginForm())
+<h3>Machines assigned to this engineer:</h3>
+<ol>
+  @foreach(var join in Model.EMJoinEntities)
+  {
+    <li>@join.Machine.Model @join.Machine.Serial</li>
+  }
+</ol>
+
+@using (Html.BeginForm("AddMachine", "Engineers"))
+{
+  @Html.HiddenFor(model => model.EngineerId)
+
+  @Html.Label("Assign a machine")
+  @Html.DropDownList("MachineId")
+
+  <input type="submit" value="Assign a machine" />
+}
+
+@using (Html.BeginForm("Engineers", "Edit"))
 {
   @Html.HiddenFor(model => model.EngineerId)
 
@@ -29,10 +47,7 @@
   @Html.LabelFor(model => model.CertExp)
   @Html.EditorFor(model => model.CertExp, new { @type="date" })
 
-  /* @Html.Label("Assign a machine")
-  @Html.DropDownList("MachineId") */
-
-  <input type="submit" value="Save" />
+  <input type="submit" value="Save changes" />
 }
 
 <p>@Html.ActionLink("Back to list", "Index")</p>

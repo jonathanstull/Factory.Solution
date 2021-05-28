@@ -1,0 +1,44 @@
+@{ Layout = "_Layout"; }
+
+@model SillyFactory.Models.Machine
+
+<h2>Update @Html.DisplayFor(model => model.Model): @Html.DisplayFor(model => model.Serial)</h4>
+
+<h3>Current details</h3>
+<p>@Html.DisplayNameFor(model => model.Dept): @Html.DisplayFor(model => model.Dept)</p>
+<p>@Html.DisplayNameFor(model => model.Make): @Html.DisplayFor(model => model.Make)</p>
+<p>@Html.DisplayNameFor(model => model.Model): @Html.DisplayFor(model => model.Model)</p>
+<p>@Html.DisplayNameFor(model => model.Serial): @Html.DisplayFor(model => model.Serial)</p>
+<p>@Html.DisplayNameFor(model => model.InstDate): @Html.DisplayFor(model => model.InstDate)</p>
+
+<h3>Engineers assigned to this machine:</h3>
+<ol>
+  @foreach(var join in Model.EMJoinEntities)
+  {
+    <li>@Html.ActionLink($"{join.Engineer.Name}", "Details", "Engineers")</li>
+  }
+</ol>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.MachineId)
+
+  @Html.LabelFor(model => model.Make)
+  @Html.EditorFor(model => model.Make)
+
+  @Html.LabelFor(model => model.Model)
+  @Html.EditorFor(model => model.Model)
+
+  @Html.LabelFor(model => model.Serial)
+  @Html.EditorFor(model => model.Serial)
+
+  @Html.LabelFor(model => model.InstDate)
+  @Html.EditorFor(model => model.InstDate, new { @type="date" })
+
+  @Html.Label("Assign an engineer")
+  @Html.DropDownList("EngineerId")
+
+  <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

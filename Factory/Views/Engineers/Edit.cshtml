@@ -18,16 +18,16 @@
   @Html.EditorFor(model => model.Name)
 
   @Html.LabelFor(model => model.HireDate)
-  @Html.EditorFor(model => model.HireDate, new { @class="form-control", @type="date" })
+  @Html.EditorFor(model => model.HireDate, new { @type="date" })
 
   @Html.LabelFor(model => model.CertDate)
-  @Html.EditorFor(model => model.CertDate, new { @class="form-control", @type="date" })
+  @Html.EditorFor(model => model.CertDate, new { @type="date" })
   
   @Html.LabelFor(model => model.CertNum)
-  @Html.EditorFor(model => model.CertNum, new { @class="form-control", @type="number" })
+  @Html.EditorFor(model => model.CertNum, new { @type="number" })
 
   @Html.LabelFor(model => model.CertExp)
-  @Html.EditorFor(model => model.CertExp, new { @class="form-control", @type="date" })
+  @Html.EditorFor(model => model.CertExp, new { @type="date" })
 
   /* @Html.Label("Assign a machine")
   @Html.DropDownList("MachineId") */

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="~/css/styles.css" />
+  <title>Dr. Sillystringz's Factory</title>
+</head>
+
+<body>
+  <header>
+
+  </header>
+
+  <div class="main">
+    @RenderBody()
+  </div>
+
+  <footer>
+    @Html.ActionLink("Home", "Index", "Home")
+    @Html.ActionLink("Engineers", "Index", "Engineers")
+    @Html.ActionLink("Machine Inventory", "Index", "Machine")
+  </footer>
+</body>
+
+</html>

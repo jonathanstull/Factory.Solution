@@ -13,9 +13,10 @@ Engineer
 
 Machine
   * MachineId
-  * Type
-  * Brand
-  * Provider
+  * Dept
+  * Make
+  * Model
+  * Serial
   * InstDate
 
 

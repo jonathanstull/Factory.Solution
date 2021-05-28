@@ -86,6 +86,14 @@ namespace SillyFactory.Controllers
       return RedirectToAction("Index");
     }
 
-    
+    [HttpPost]
+    [ActionName("DeleteMachine")]
+    public ActionResult DeleteMachine(int joinId)
+    {
+      var joinEntry = _db.EngineerMachine.FirstOrDefault(entry => entry.Id == joinId);
+      _db.EngineerMachine.Remove(joinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }

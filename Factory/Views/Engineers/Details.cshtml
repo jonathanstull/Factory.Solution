@@ -21,7 +21,7 @@ else
   @foreach(var join in Model.EMJoinEntities)
   {
     <li>@join.Machine.Model (#@join.Machine.Serial)</li>
-    @using (Html.BeginForm("DeleteMachines", "Engineers"))
+    @using (Html.BeginForm("DeleteMachine", "Engineers"))
       {
         @Html.Hidden("joinId", @join.Id)
         <input type="submit" value="Delete"/>

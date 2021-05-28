@@ -15,7 +15,7 @@
 <ol>
   @foreach(var join in Model.EMJoinEntities)
   {
-    <li>@Html.ActionLink($"{join.Engineer.Name}", "Details", "Engineers")</li>
+    <li>@join.Engineer.Name</li>
   }
 </ol>
 

@@ -1,0 +1,28 @@
+@{ Layout = "_Layout"; }
+
+@model SillyFactory.Models.Machine
+
+<h2>@Html.DisplayNameFor(model => model.Model): @Html.DisplayFor(model => model.Model): @Html.DisplayFor(model => model.Serial)</h2>
+
+@if(@Model.EMJoinEntities.Count == 0)
+{
+  <p>This machine is not assigned to any engineers.</p>
+}
+else
+{
+  <h3>Engineers this machine is assigned to:</h3>
+  <ul>
+    @foreach(var join in Model.EMJoinEntities)
+    {
+      <li>@join.Engineer.Name</li>
+      @using (Html.BeginForm("DeleteEngineer", "Machines"))
+      {
+        @Html.Hidden("joinId", @join.Id)
+        <input type="submit" value="Delete"/>
+      }
+    }
+  </ul>
+}
+<p>@Html.ActionLink("Back to machine inventory", "Index")</p>
+<p>@Html.ActionLink("Update machine", "Edit", new { id = Model.MachineId })</p>
+<p>@Html.ActionLink("Delete machine", "Delete", new { id = Model.MachineId })</p>

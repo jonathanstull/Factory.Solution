@@ -1,0 +1,28 @@
+@{ Layout = "_Layout"; }
+
+@model SillyFactory.Models.Machine
+
+<h2>Add a new machine</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Dept)
+  @Html.TextBoxFor(model => model.Dept, new { @required="required"})
+
+  @Html.LabelFor(model => model.Make)
+  @Html.TextBoxFor(model => model.Make, new { @type="text", @required="required"})
+
+  @Html.LabelFor(model => model.Model)
+  @Html.TextBoxFor(model => model.Model, new { @type="text", @required="required"})
+  
+  @Html.LabelFor(model => model.Serial)
+  @Html.TextBoxFor(model => model.Serial, new { @type="number", @required="required"})
+
+  @Html.LabelFor(model => model.InstDate)
+  @Html.TextBoxFor(model => model.InstDate, new { @type="date", @required="required"})
+
+  @Html.Label("Assign an engineer")
+  @Html.DropDownList("EngineerId")
+
+  <input type="submit" value="Add new machine" />
+}

@@ -4,6 +4,13 @@
 
 <h2>@Html.DisplayNameFor(model => model.Model): @Html.DisplayFor(model => model.Model): @Html.DisplayFor(model => model.Serial)</h2>
 
+<h3>Current details</h3>
+<p>@Html.DisplayNameFor(model => model.Dept): @Html.DisplayFor(model => model.Dept)</p>
+<p>@Html.DisplayNameFor(model => model.Make): @Html.DisplayFor(model => model.Make)</p>
+<p>@Html.DisplayNameFor(model => model.Model): @Html.DisplayFor(model => model.Model)</p>
+<p>@Html.DisplayNameFor(model => model.Serial): @Html.DisplayFor(model => model.Serial)</p>
+<p>@Html.DisplayNameFor(model => model.InstDate): @Html.DisplayFor(model => model.InstDate)</p>
+
 @if(@Model.EMJoinEntities.Count == 0)
 {
   <p>This machine is not assigned to any engineers.</p>

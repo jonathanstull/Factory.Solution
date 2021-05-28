@@ -14,7 +14,7 @@ else
   <ul>
   @foreach(var join in Model.EMJoinEntities)
   {
-    <li>@join.Machine.Model /(@join.Machine.Serial)</li>
+    <li>@join.Machine.Model (#@join.Machine.Serial)</li>
   }
   </ul>
 }

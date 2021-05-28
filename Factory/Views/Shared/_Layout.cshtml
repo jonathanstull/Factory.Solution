@@ -3,23 +3,29 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="~/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Mukta+Vaani:wght@200;300&family=Montez&family=Taviraj:wght@200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="~/css/global.css" />
   <title>Dr. Sillystringz's Factory</title>
 </head>
 
 <body>
   <header>
-
+    <h1>Dr. Sillystringz</h1>
   </header>
 
   <div class="main">
-    @RenderBody()
+    <div class="content">
+      @RenderBody()
+    </div>
   </div>
 
   <footer>
-    @Html.ActionLink("Home", "Index", "Home")
-    @Html.ActionLink("Engineers", "Index", "Engineers")
-    @Html.ActionLink("Machine Inventory", "Index", "Machines")
+    <div id="footer-links">
+      <a>@Html.ActionLink("Home", "Index", "Home")</a>
+      <a>@Html.ActionLink("Personnel", "Index", "Engineers")</a>
+      <a>@Html.ActionLink("Inventory", "Index", "Machines")</a>
+    </div>
   </footer>
 </body>
 

@@ -1,6 +1,8 @@
+@{ Layout = "_Layout"; }
+
 <h1>Welcome to Dr. Sillystringz's Factory</h1>
 
 <p>Navigate to the links below to oversee factory personnel and inventory.</p>
 
-<p>@Html.ActionLink("Engineers", "Index", "Engineers")</p>
-<p>@Html.ActionLink("Machine Inventory", "Index", "Machines")</p>
+<button class="teaser">@Html.ActionLink("Personnel", "Index", "Engineers")</button>
+<button class="teaser">@Html.ActionLink("Inventory", "Index", "Machines")</button>

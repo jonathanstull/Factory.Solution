@@ -1,0 +1,38 @@
+@{ Layout = "_Layout"; }
+
+@model SillyFactory.Models.Engineer
+
+<h2>Update engineer @Html.DisplayFor(model => model.Name)</h2>
+
+<h3>Current details</h3>
+<p>@Html.DisplayNameFor(model => model.HireDate): @Html.DisplayFor(model => model.HireDate)</p>
+<p>@Html.DisplayNameFor(model => model.CertDate): @Html.DisplayFor(model => model.CertDate)</p>
+<p>@Html.DisplayNameFor(model => model.CertNum): @Html.DisplayFor(model => model.CertNum)</p>
+<p>@Html.DisplayNameFor(model => model.CertExp): @Html.DisplayFor(model => model.CertExp)</p>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.EngineerId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+
+  @Html.LabelFor(model => model.HireDate)
+  @Html.EditorFor(model => model.HireDate, new { @class="form-control", @type="date" })
+
+  @Html.LabelFor(model => model.CertDate)
+  @Html.EditorFor(model => model.CertDate, new { @class="form-control", @type="date" })
+  
+  @Html.LabelFor(model => model.CertNum)
+  @Html.EditorFor(model => model.CertNum, new { @class="form-control", @type="number" })
+
+  @Html.LabelFor(model => model.CertExp)
+  @Html.EditorFor(model => model.CertExp, new { @class="form-control", @type="date" })
+
+  /* @Html.Label("Assign a machine")
+  @Html.DropDownList("MachineId") */
+
+  <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

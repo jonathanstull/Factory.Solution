@@ -1,8 +1,8 @@
+.env
 */obj/
 */bin/
 */appsettings.json
 */.vscode
 */.DS_Store
-.env
 */.vs
 */.DS_Store

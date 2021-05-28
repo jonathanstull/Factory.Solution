@@ -2,7 +2,7 @@ namespace SillyFactory.Models
 {
   public class EngineerMachine
   {
-    public int EngMachId { get; set; }   
+    public int Id { get; set; }   
     public int EngineerId { get; set; }
     public int MachineId { get; set; }
     public virtual Engineer Engineer { get; set; }

@@ -74,13 +74,6 @@ namespace SillyFactory.Controllers
       return RedirectToAction("Index");
     }
 
-    // public ActionResult AddMachine(int id)
-    // {
-    //   var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
-      
-    //   return View(thisEngineer);
-    // }
-
     [HttpPost]
     [ActionName("AddMachine")]
     public ActionResult AddMachine(Engineer engineer, int MachineId)

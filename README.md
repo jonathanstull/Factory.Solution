@@ -1,29 +1,6 @@
-Naming conventions
+# Dr. Sillystringz's Factory
 
-global namespace: SillyFactory
-
-Models:
-Engineer
-  * EngineerId
-  * Name
-  * HireDate
-  * CertDate
-  * CertNum
-  * CertExp
-
-Machine
-  * MachineId
-  * Dept
-  * Make
-  * Model
-  * Serial
-  * InstDate
-
-
-
-# Eau Claire's Salon
-
-### A Week X Epicodus Project, 21 May 2021
+### A Week X Epicodus Project, 28 May 2021
 
 _By Jonathan Stull_
 
@@ -48,17 +25,15 @@ In May 2021, I was contracted by the factory of the famous Dr. Sillystringz to b
 
 * Setting up a MySQL database
   1. Download and install MySQL and MySQLWorkbench in accordance with [this tutorial](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql)
-  2. Open MySQLWorkbench and navigate to the **Administration** tab in the left-hand panel
-  3. Under **Management**, select **Data Import/Restore**
-  4. Select **Import from Self-Contained File** and open the dump file in the root directory of this project by navigating to `~/Factory.Solution/jonathan_stull.sql`
-  5. **Do not select a Default Target Schema.** `jonathan_stull.sql` contains MySQL command lines that will create a schema for you upon import
-  6. Select **Start Import**
-  7. Add a `.appsettings.json` file to specify the MySQL database using the following settings (please note that **you must change `[YOUR_USERNAME]` and `[YOUR_PASSWORD]`** to reflect your user information):
+  2. In your cloned repository, navigate to the production directory `~/Factory` and restore all dependencies with `dotnet restore`
+  3. In the CLI, create a new file with the command `touch .appsettings.json` file to specify the MySQL database using the settings indicated below (please note that **you must change `[YOUR_DATABASE_NAME]`, `[YOUR_USERNAME]` and `[YOUR_PASSWORD]`** to reflect your user information; see below):
+  4. In the CLI, enter the command `dotnet ef migrations add Initial` to build the initial database migration
+  5. In the CLI, enter the command `dotnet ef database update` to generate the schema and corresponding tables
   
     ```
     {
     "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=jonathan_stull;uid=[YOUR_USERNAME];pwd=[YOUR_PASSWORD];"
+      "DefaultConnection": "Server=localhost;Port=3306;database=[YOUR_DATABASE_NAME];uid=[YOUR_USERNAME];pwd=[YOUR_PASSWORD];"
       }
     }
     ```

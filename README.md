@@ -26,7 +26,7 @@ In May 2021, I was contracted by the factory of the famous Dr. Sillystringz to b
 * Setting up a MySQL database
   1. Download and install MySQL and MySQLWorkbench in accordance with [this tutorial](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql)
   2. In your cloned repository, navigate to the production directory `~/Factory` and restore all dependencies with `dotnet restore`
-  3. In the CLI, create a new file with the command `touch .appsettings.json` file to specify the MySQL database using the settings indicated below (please note that **you must change `[YOUR_DATABASE_NAME]`, `[YOUR_USERNAME]` and `[YOUR_PASSWORD]`** to reflect your user information; see below):
+  3. In the CLI, create a new file with the command `touch .appsettings.json` and apply the settings in the codeblock below to specify the MySQL database (please note that **you must change `[YOUR_DATABASE_NAME]`, `[YOUR_USERNAME]` and `[YOUR_PASSWORD]`** to reflect your user information; see below):
   4. In the CLI, enter the command `dotnet ef migrations add Initial` to build the initial database migration
   5. In the CLI, enter the command `dotnet ef database update` to generate the schema and corresponding tables
   
